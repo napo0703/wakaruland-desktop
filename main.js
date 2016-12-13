@@ -1,11 +1,33 @@
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app
+const Menu = electron.Menu
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow
 
 const path = require('path')
 const url = require('url')
+
+const template = [{
+    label: "WakaruLand",
+    submenu: [
+        { label: "About WakaruLand", selector: "orderFrontStandardAboutPanel:" },
+        { type: "separator" },
+        { label: "Quit", accelerator: "Command+Q", click: function() { app.quit(); }}
+    ]}, {
+    label: "Edit",
+    submenu: [
+        { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+        { label: "Redo", accelerator: "Shift+CmdOrCtrl+Z", selector: "redo:" },
+        { type: "separator" },
+        { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+        { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+        { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+        { label: "Select All", accelerator: "CmdOrCtrl+A", selector: "selectAll:" },
+        { type: "separator" },
+        { label: 'Toggle Developer Tools', accelerator: 'Alt+Command+I', click: function() { mb.window.openDevTools(); }}
+    ]}
+]
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -13,8 +35,9 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600})
+  mainWindow = new BrowserWindow({width: 1024, height: 600})
 
+  Menu.setApplicationMenu(Menu.buildFromTemplate(template))
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'index.html'),
