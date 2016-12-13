@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>わかるらんど</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="IoT時代の共有情報視覚化システム"/>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-theme.min.css">
+    <style type="text/css">@import "index.css";</style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-88914384-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <div id="console">
+      <div id="console_header">
+        <div id="name_input">
+          @<input type="text" id="name_text_box" placeholder="Twitterアカウント名">
+          <div id="linda_status"></div>
+        </div>
+        <div id="add_img_input">
+          <input type="text" id="image_url_text_box" placeholder="テキスト、または追加したい画像のURL">
+        </div>
+      </div>
+      <div id="console_reaction">
+        <div id="console_reaction_view">
+          <div id="console_reaction_img" style="background: center center no-repeat; background-size:contain"></div>
+          <div class="progress" id="console_reaction_progress">
+            <div class="progress-bar progress-bar-success" role="progressbar" id="console_reaction_progress_bar" aria-valuemin="0" aria-valuemax="300">0秒</div>
+          </div>
+        </div>
+        <div id="stamp_grid_view"></div>
+      </div>
+      <div id="copyright">
+        <a target="_blank" href="https://github.com/napo0703/WakaruLand">GitHub</a>
+      </div>
+    </div>
+    <div id="grid">
+      <div id="grid_header">
+        <img id="show_console" src="images/show_console.png">
+        <img id="reload_button" src="images/reload.svg">
+        <div id="reload_caption">最新のユーザーリストを取得</div>
+      </div>
+      <div id="grid_view"></div>
+    </div>
+    <script src="https://linda.wakaruland.com/linda/linda.js"></script>
+    <script src="dist/index.js"></script>
+  </body>
+</html>

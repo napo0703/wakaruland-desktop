@@ -1,0 +1,15 @@
+{
+  "name": "wakaruland-desktop",
+  "version": "0.1.0",
+  "description": "WakaruLand desktop application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/napo0703/wakaruland-desktop",
+  "author": "Naoaki Yamada",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^1.4.1"
+  }
+}
